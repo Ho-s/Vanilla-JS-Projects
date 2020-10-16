@@ -1,7 +1,7 @@
 ## Video
-![video1](/readmeimages/video1.PNG)  
+![video1](/readmeimages/video1.png)  
 비디오는 위 사진처럼 꾸며졌으며, `:hover`를 이용해 아래처럼 몇 개의 버튼을 구현해놓았습니다.  
-![video2](/readmeimages/video2.PNG)
+![video2](/readmeimages/video2.png)
 
 ---
 

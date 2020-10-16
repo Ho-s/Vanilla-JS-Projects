@@ -52,7 +52,7 @@
     }
 }
 ```
-![responsive1](/reademeimages/responsive3.PNG)  
+![responsive1](/readmeimages/responsive3.PNG)  
 화면 크기가 1800px이하일 때는 각 줄에 동영상 두개를 삭제하여 한 줄에 동영상이 4개만 뜨도록 설정했으며, 그 아래의 픽셀로는 동영상들이 밀리도록 하여 스크롤바를 내리면 보이도록 설정했으며, 그 코드들은 제외하였습니다.
 
 ---
@@ -64,5 +64,5 @@
     }
 }
 ```
-![responsive2](/reademeimages/responsive2.PNG)  
+![responsive2](/readmeimages/responsive2.PNG)  
 왼쪽의 홈, 인기 등의 카테고리를 표시하는 창은 808픽셀 이하일때 삭제되도록 하였습니다.
