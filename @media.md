@@ -1,4 +1,4 @@
-#### Responsive page
+## Responsive page
 
 
 ```css
@@ -13,6 +13,8 @@
 ```
 ![responsive](/readmeimages/responsive1.PNG)  
 기본 비디오 한 칸의 크기는 위와 같으며, 창이 줄어듦에 따라 비디오가 표시되는 개수 등을 조절했습니다.
+
+---
 
 ---
 ```css
@@ -54,6 +56,7 @@
 화면 크기가 1800px이하일 때는 각 줄에 동영상 두개를 삭제하여 한 줄에 동영상이 4개만 뜨도록 설정했으며, 그 아래의 픽셀로는 동영상들이 밀리도록 하여 스크롤바를 내리면 보이도록 설정했으며, 그 코드들은 제외하였습니다.
 
 ---
+
 ```css
 @media screen and (max-width:808px){
     #main-category{

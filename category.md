@@ -1,7 +1,7 @@
-#### Category
+## Category
 왼쪽에 보이는 홈, 인기, 구독 등의 바를 카테고리라고 명명했습니다.
 
-## Gradient
+### Gradient
 ![gradient](/readmeimages/category1.PNG)  
 왼쪽 위에 보이는 버튼에 `@keyframe`효과를 넣어 클릭하고 있을 때 색이 변하도록 설정하였습니다.
 ```css
@@ -29,7 +29,7 @@
 }
 ```
 
-## When clicked
+### When clicked
 아래 사진의 카테고리 바를 클릭했을 때 숨겨져있던 창이 뜨도록 설정했습니다.  
 ![clicked](/readmeimages/category2.PNG)
 
@@ -48,7 +48,7 @@ document.querySelector("#header-category").addEventListener("click",()=>{
 위 표시된 버튼을 `#header-category`, 숨겨져있던 창들을 `#hidden`,  
 원래 표시되던 홈, 인기, 구독 등의 버튼이 있던 공간을 `#main-category`라고  했습니다.
 
-## Scrollbar
+### Scrollbar
 ![hover](/readmeimages/category3.PNG)  
 위의 보이는 사진처럼 마우스를 올렸을 때만 옆의 스크롤바가 보여지게 했으며, 이는  
 `:hover`과 `overflow-y`의 기능을 사용하였습니다.  

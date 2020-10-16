@@ -1,11 +1,11 @@
-##### Summary  
+# Summary  
 * <a href="README.md">Introduction</a>
 * <a href="@media.md">Responsive page</a>
 * <a href="category.md">Category</a>
 * <a href="video.md">Video</a>
 * <a href="problems.md">Problems</a>
 
-##### Youtube-Clone-Coding
+# Youtube-Clone-Coding
 I am a beginner.:relaxed:  
 doing it for pracetice.:blush:  
 Now updating.:satisfied:  
@@ -14,7 +14,7 @@ Tried not to look up the codes of Youtube.
 Using `html` , `css` and a little bit of `javascript`.  
 Please give me a lot of feed back.:smiley:
 
-## Completed
+### Completed
 ![main-home](/readmeimages/completed1.PNG)  
 위는 작업을 완료한 왼쪽에 보이는 홈버튼의 페이지입니다.  
 위의 헤더를 포함해서 보이는 모든 태그들은 가능한 기능이 있도록 만들었습니다.
