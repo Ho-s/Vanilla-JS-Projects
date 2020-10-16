@@ -1,4 +1,4 @@
-### Responsive page
+#### Responsive page
 
 
 ```css
@@ -11,7 +11,7 @@
     float: left;
 }
 ```
-[responsive](/readmeimages/responsive1.PNG)
+![responsive](/readmeimages/responsive1.PNG)  
 기본 비디오 한 칸의 크기는 위와 같으며, 창이 줄어듦에 따라 비디오가 표시되는 개수 등을 조절했습니다.
 
 ---
@@ -50,10 +50,8 @@
     }
 }
 ```
-[responsive1](/reademeimages/responsive3.PNG)
-화면 크기가 1800px이하일 때는 각 줄에 동영상 두개를 삭제하여 한 줄에 동영상이 4개만  
-뜨도록 설정했으며, 그 아래의 픽셀로는 동영상들이 밀리도록 하여 스크롤바를 내리면   
-보이도록 설정했으며, 그 코드들은 제외하도록 하겠습니다.
+![responsive1](/reademeimages/responsive3.PNG)  
+화면 크기가 1800px이하일 때는 각 줄에 동영상 두개를 삭제하여 한 줄에 동영상이 4개만 뜨도록 설정했으며, 그 아래의 픽셀로는 동영상들이 밀리도록 하여 스크롤바를 내리면 보이도록 설정했으며, 그 코드들은 제외하였습니다.
 
 ---
 ```css
@@ -63,5 +61,5 @@
     }
 }
 ```
-[responsive2](/reademeimages/responsive2.PNG)
+![responsive2](/reademeimages/responsive2.PNG)  
 왼쪽의 홈, 인기 등의 카테고리를 표시하는 창은 808픽셀 이하일때 삭제되도록 하였습니다.

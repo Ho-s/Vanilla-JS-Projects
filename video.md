@@ -1,7 +1,7 @@
-### Video
-[video1](/readmeimages/video1.PNG)
-비디오는 위 사진처럼 꾸며졌으며, `:hover`를 이용해 아래처럼 몇 개의 버튼을 구현해놓았습니다.
-[video2](/readmeimages/video2.PNG)
+#### Video
+![video1](/readmeimages/video1.PNG)  
+비디오는 위 사진처럼 꾸며졌으며, `:hover`를 이용해 아래처럼 몇 개의 버튼을 구현해놓았습니다.  
+![video2](/readmeimages/video2.PNG)
 
 ---
 
@@ -19,9 +19,7 @@ document.querySelector("#video").addEventListener("click",()=>{
 }
 ```
 
-[video3](/readmeimages/video3.PNG)
-
-
+![video3](/readmeimages/video3.PNG)  
 비디오는 `html`의 `<video>`태그를 이용하였으며, `css`의 `position:fixed`를 이용해  
 화면의 오른쪽 아래에 붙도록 설정해두었습니다.
 
@@ -39,4 +37,4 @@ document.querySelector("#video").addEventListener("click",()=>{
     bottom: 20px;
 }
 ```
-[video4](/readmeimages/video4.PNG)
+![video4](/readmeimages/video4.PNG)
