@@ -8,7 +8,7 @@
 
 ## Quiz App
 I am a beginner.:blush:  
-Doing it for pracetice.:smiley:  
+Doing it for practice.:smiley:  
 Please give me a lot of feedbacks.:grin:  
 There are five questions only, and you can change it with your codes.  
 <br>
