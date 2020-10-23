@@ -3,7 +3,6 @@ const button=document.querySelector("#button")
 const hello=document.querySelector("#first").querySelector("h2")
 const change=document.querySelector("h4")
 
-
 function buttonClick(){
     button.addEventListener("click",()=>{
         if(name.value){
