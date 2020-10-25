@@ -2,6 +2,15 @@ function storeTime(){
     localStorage.setItem('hours',0)
     localStorage.setItem('minutes',0)
     localStorage.setItem('seconds',0)
+    if(hours===null){
+        hours=0
+    }
+    if(minutes===null){
+        minutes=0
+    }
+    if(seconds===null){
+        seconds=0
+    }
     setInterval(()=>{
         localStorage.setItem('hours',hours)
         localStorage.setItem('minutes',minutes)
