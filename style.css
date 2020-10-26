@@ -1,0 +1,172 @@
+body{
+    background-color: #e9e9e9;
+}
+
+#whole{
+    margin: 220px auto;
+    height: 420px;
+    width: 240px;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px grey;
+}
+
+input{
+    width: 115px;
+    height: 24px;
+    background-color: #ccc;
+    border:0;
+    padding: 0;
+}
+
+#button{
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin:0;
+    position: absolute;
+    top:1px;
+    right: 0;
+    background-image: url(./images/search.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+form{
+    margin: 12px 45px 13px 45px;
+    display: inline-block;
+    position: relative;
+    width: 150px
+}
+
+#top{
+    height: 50px;
+}
+
+#mid{
+    height: 140px;
+    background-color: rgb(209, 178, 230);
+}
+
+#mid-high{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#bottom{
+    height: 230px;
+    width: 240px;
+    display: inline-block;
+}
+
+#space{
+    box-shadow: 1px 1px 1px 1px grey;
+    width: 200px;
+    height: 190px;
+    margin: 20px;
+}
+
+#bottom-high{
+    height: 150px;
+    background-color: #e9e9e9;
+    position: relative;
+    background-image: url(./images/kapsalon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#inside{
+    position: absolute;
+    top:10px;
+    left: -1px;
+    background-color: white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    width: 100px;
+    height: 20px;
+}
+
+#mid-low{
+    display: flex;
+    padding: 0;
+    margin:0;
+    list-style: none;
+}
+
+#mid-low li{
+    margin-left:8px;
+    width: 50px;
+    height: 60px;
+    cursor: pointer;
+}
+
+#mid-low div{
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border:2px solid white
+}
+
+#mid-low span{
+    font-size: 12px;
+    font-weight: 600;
+    width: 50px;
+    height: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+}
+
+#No1 div{
+    background-image: url(./images/kapsalon.jpg);
+}
+#No2 div{
+    background-image: url(./images/egg\ drop\ soup.jpg);
+}
+#No3 div{
+    background-image: url(./images/lasagne.jpg);
+}
+#No4 div{
+    background-image: url(./images/tarte\ tatin.jpg);
+}
+
+#bottom-low{
+    position: relative;
+}
+
+#heart{
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(./images/heart.png);
+    margin-top: 8px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    background-blend-mode: multiply;
+}
+
+#heart:hover{
+    background-image: url(./images/heart1.png);
+}
+
+#name{
+    position: absolute;
+    margin-top: 9px;
+    left:5px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 140px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
