@@ -3,7 +3,7 @@
 * <a href="@media.md">Responsive page</a>
 * <a href="category.md">Category</a>
 * <a href="video.md">Video</a>
-* <a href="problem.md">Problems</a>  
+* <a href="problems.md">Problems</a>  
 <br>
 
 # Youtube-Clone-Coding
