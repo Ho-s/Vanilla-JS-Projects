@@ -128,7 +128,7 @@ document.querySelector("#close").addEventListener("click",()=>{
     document.getElementById("video-down-name").style.textAlign="center"
 })
 
-document.querySelector("#late").addEventListener("click",()=>{
+document.querySelector("#late").addEventListener("click",function(event){
     if(document.getElementById("late").style.backgroundImage==='url("images/1.PNG")'){
         document.getElementById("lateM").textContent="추가됨"
         document.getElementById("lateM").style.display="inline-block"
@@ -144,9 +144,10 @@ document.querySelector("#late").addEventListener("click",()=>{
             document.getElementById("lateM").style.display="none"
         },2000)
     }
+    event.stopPropagation()
 })
 
-document.querySelector("#add").addEventListener("click",()=>{
+document.querySelector("#add").addEventListener("click",function(event){
     if(document.getElementById("add").style.backgroundImage==='url("images/2.PNG")'){
         document.getElementById("addM").textContent="추가됨"
         document.getElementById("addM").style.display="inline-block"
@@ -162,6 +163,7 @@ document.querySelector("#add").addEventListener("click",()=>{
             document.getElementById("addM").style.display="none"
         },2000)
     }
+    event.stopPropagation()
 })
 
 document.querySelector("#dots").addEventListener("click",()=>{

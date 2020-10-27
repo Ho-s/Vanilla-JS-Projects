@@ -1,6 +1,7 @@
 # Problems
 *현재 수정중인 문제 목록*  
-- [ ] hover 안의 hover  
+- [x] 클릭 이벤트시에 상위 항목의 클릭이벤트가 실행되는 현상  
+// 20201027 event.stopPropagation()으로 해결
 - [ ] 닫기버튼없애기 main으로 대체  
 - [ ] 키보드버튼  
 - [ ] gradient  
