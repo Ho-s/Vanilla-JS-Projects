@@ -4,6 +4,7 @@
 * <a href="keyframes.md">`@keyframes` with `animation`</a>
 * <a href="shuffle.md">ListShuffle</a>
 * <a href="radio.md">Radio button</a>  
+* <a href="problems.md">Problems</a>  
 <br>
 
 ## Quiz App
