@@ -8,6 +8,6 @@
 - [ ] header-category 띄우기  
 - [ ] 검색창크기반응  
 - [ ] #header-search 반응   
-- [ ] video 클릭 안에 클릭  
+- [ ] hover 안의 hover  
 - [ ] 시작장애인용  
 **check when completed**
