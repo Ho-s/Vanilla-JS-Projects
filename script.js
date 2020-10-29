@@ -1,6 +1,6 @@
-const image=document.querySelector("#bottom-high")
-const imageName=document.querySelector("#name")
-const heart=document.querySelector("#heart")
+const image=document.querySelector(".bottom-high")
+const imageName=document.querySelector(".name")
+const heart=document.querySelector(".heart")
 const ul=document.querySelector("#mid-low")
 
 let heartNum=0
@@ -113,7 +113,7 @@ async function useGetRandomMeal(){
                 const div=document.createElement('div')
                 const span=document.createElement('span')
                 li.id=image.getAttribute('name')
-                div.style.backgroundImage=`url(${image.getAttribute('class')})`
+                div.style.backgroundImage=`url(${image.getAttribute('id')})`
                 span.textContent=imageName.textContent
                 li.appendChild(div)
                 li.appendChild(span)
@@ -123,7 +123,7 @@ async function useGetRandomMeal(){
                     id:image.getAttribute('name'),
                     name:imageName.textContent,
                     heartNum:heartNum,
-                    backgroundImage:`url(${image.getAttribute('class')})`
+                    backgroundImage:`url(${image.getAttribute('id')})`
                 }
                 mealsList.push(meals)
                 localStorage.setItem('meals',JSON.stringify(mealsList))
@@ -152,7 +152,7 @@ async function useGetRandomMeal(){
                 imageName.textContent=meal.strMeal
                 heart.style.backgroundImage="url(./images/heart1.png)"
                 image.setAttribute('name',meal.idMeal)
-                image.setAttribute('class',meal.strMealThumb)
+                image.setAttribute('id',meal.strMealThumb)
                 heartNum=3
                 if(meal.strSource){
                     image.setAttribute('onclick',`window.open("${meal.strSource}")`)
@@ -164,7 +164,6 @@ async function useGetRandomMeal(){
             })
         }
     }
-
     getRandomMeal()
     clickRandom()
     loadMeals()
@@ -186,6 +185,7 @@ async function getMealsBySearch(term){
     return meals
 }
 
+
 const input=document.querySelector("#input")
 const searchButton=document.querySelector("#button")
 function search(){
@@ -197,14 +197,102 @@ function search(){
             if(meals===null){
                 alert("There is no result")
             }else{
+                const result=document.querySelector("#search-result")
+                while(result.hasChildNodes()){
+                    result.removeChild(result.firstChild)
+                }
                 for(let i=0;i<meals.length;i++){
-                    
+                    const li=document.createElement('li')
+                    const bottomHigh=document.createElement('div')
+                    const bottomLow=document.createElement('div')
+                    const name=document.createElement('div')
+                    const theOtherHeart=document.createElement('div')
+                    const space=document.createElement('div')
+                    bottomHigh.setAttribute('class','bottom-high')
+                    bottomHigh.setAttribute('id',i+1)
+                    bottomLow.setAttribute('class','bottom-low')
+                    name.setAttribute('class','name')
+                    name.setAttribute('id',i+1*100)
+                    theOtherHeart.setAttribute('class','the-other-heart')
+                    space.setAttribute('class','space')
+                    bottomHigh.style.backgroundImage=`url(${meals[i].strMealThumb})`
+                    name.textContent=meals[i].strMeal
+                    theOtherHeart.style.backgroundImage='url("./images/heart.png")'
+                    bottomLow.appendChild(name)
+                    bottomLow.appendChild(theOtherHeart)
+                    space.appendChild(bottomHigh)
+                    space.appendChild(bottomLow)
+                    li.appendChild(space)
+                    result.appendChild(li)
                 }
             }
         }
+        sth()
     })
+
+    const hearts=document.getElementsByClassName(".the-other-heart")
+
+    Array.from(hearts).forEach(function(heart){
+        heart.addEventListener('click',function(e){
+            console.log("sht")
+        })
+    })
+    // heart.addEventListener("click",()=>{
+    //     if(heartNum===0){
+    //         heart.style.backgroundImage="url(./images/heart1.png)"
+    //         const li=document.createElement('li')
+    //         const div=document.createElement('div')
+    //         const span=document.createElement('span')
+    //         li.id=randomMeal.idMeal
+    //         div.style.backgroundImage=`url(${randomMeal.strMealThumb})`
+    //         span.textContent=randomMeal.strMeal
+    //         li.appendChild(div)
+    //         li.appendChild(span)
+    //         ul.appendChild(li)
+    //         heartNum++
+    //         meals={
+    //             id:randomMeal.idMeal,
+    //             name:randomMeal.strMeal,
+    //             heartNum:heartNum,
+    //             backgroundImage:`url(${randomMeal.strMealThumb})`
+    //         }
+    //         mealsList.push(meals)
+    //         localStorage.setItem('meals',JSON.stringify(mealsList))
+    //     }
+    //     else if(heartNum===1){
+    //         heart.style.backgroundImage="url(./images/heart.png)"
+    //         heartNum--
+    //         const parent=document.getElementById("mid-low")
+    //         const child=document.getElementById(randomMeal.idMeal)
+    //         parent.removeChild(child)
+    //         const cleanList=mealsList.filter(function(List){
+    //             return List.id!==mealsList[mealsList.length-1].id
+    //         })
+    //         mealsList=cleanList
+    //         localStorage.setItem('meals',JSON.stringify(mealsList))
+    //     }
+    // })
 }
 
+async function sth(){
+    const meals=await getMealsBySearch(input.value)
+    for(let i=0;i<meals.length;i++){
+        if(meals[i].strSource){
+            document.getElementById(`${i+1}`).setAttribute('onclick',`window.open("${meals[i].strSource}")`)
+            document.getElementById(`${i+1*100}`).setAttribute('onclick',`window.open("${meals[i].strSource}")`)
+        }else{
+            document.getElementById(`${i+1}`).setAttribute('onclick',`alert("I'm sorry, there is no linked website")`)
+            document.getElementById(`${i+1*100}`).setAttribute('onclick',`alert("I'm sorry, there is no linked website")`)
+        }
+    }
+}
+
+
+// window.onclick = e => {
+//     console.log(e.target);  // to get the element
+//     console.log(e.target.tagName);  // to get the element tag name alone
+// }
+// //클릭 타겟을 얻는 거
 
 function init(){
     useGetRandomMeal()
