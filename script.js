@@ -197,6 +197,7 @@ function search(){
                 alert("There is no result")
             }else{
                 const result=document.querySelector("#search-result")
+                document.querySelector("#first").style.display="none"
                 while(result.hasChildNodes()){
                     result.removeChild(result.firstChild)
                 }

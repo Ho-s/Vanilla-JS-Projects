@@ -97,11 +97,11 @@ form{
     background-color: white;
     text-align: center;
     line-height: 20px;
-    font-size: 12px;
+    font-size: 11px;
     width: 100px;
     height: 20px;
     cursor: pointer;
-    z-index: 100;
+    box-shadow: 1px 1px 1px 1px grey;
 }
 
 #mid-high{
