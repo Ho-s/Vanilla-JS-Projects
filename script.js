@@ -57,7 +57,6 @@ async function useGetRandomMeal(){
             parsedMeals=JSON.parse(meals)
             mealsList=parsedMeals
             for(i in parsedMeals){
-                // getMealbyId(mealsList[i].id)
                 const li=document.createElement('li')
                 const div=document.createElement('div')
                 const span=document.createElement('span')
@@ -143,7 +142,7 @@ async function useGetRandomMeal(){
         })
     }
 
-    async function liClick(){
+    function liClick(){
         const clickList=document.querySelectorAll('li')
         for(let i=0;i<clickList.length;i++){
             clickList[i].addEventListener("click",async(e)=>{
@@ -215,63 +214,65 @@ function search(){
                     name.setAttribute('id',i+1*100)
                     theOtherHeart.setAttribute('class','the-other-heart')
                     space.setAttribute('class','space')
+                    space.setAttribute('id',meals[i].idMeal)
+                    theOtherHeart.style.backgroundImage='url("./images/heart.png")'
                     bottomHigh.style.backgroundImage=`url(${meals[i].strMealThumb})`
                     name.textContent=meals[i].strMeal
-                    theOtherHeart.style.backgroundImage='url("./images/heart.png")'
                     bottomLow.appendChild(name)
                     bottomLow.appendChild(theOtherHeart)
                     space.appendChild(bottomHigh)
                     space.appendChild(bottomLow)
                     li.appendChild(space)
                     result.appendChild(li)
+                    for(let v=0; v<mealsList.length;v++){
+                        if(meals[i].idMeal===mealsList[v].id){
+                            theOtherHeart.style.backgroundImage='url("./images/heart1.png")'
+                            theOtherHeart.setAttribute('id','styled')
+                        }
+                    }
                 }
             }
         }
+
         sth()
-    })
-
-    const hearts=document.getElementsByClassName(".the-other-heart")
-
-    Array.from(hearts).forEach(function(heart){
-        heart.addEventListener('click',function(e){
-            console.log("sht")
+        const hearts=document.getElementsByClassName("the-other-heart")
+        Array.from(hearts).forEach(function(like){
+            like.addEventListener('click',async(e)=>{
+                const meal= await getMealbyId(e.target.parentNode.parentNode.id)
+                if(e.target.id){
+                    like.style.backgroundImage="url(./images/heart.png)"
+                    const parent=document.getElementById("mid-low")
+                    const child=document.getElementById(meal.idMeal)
+                    parent.removeChild(child)
+                    const cleanList=mealsList.filter(function(List){
+                        return List.id!==meal.idMeal
+                    })
+                    mealsList=cleanList
+                    localStorage.setItem('meals',JSON.stringify(mealsList))
+                    e.target.removeAttribute('id')
+                }else{
+                    like.style.backgroundImage="url(./images/heart1.png)"
+                    const li=document.createElement('li')
+                    const div=document.createElement('div')
+                    const span=document.createElement('span')
+                    li.id=meal.idMeal
+                    div.style.backgroundImage=`url(${meal.strMealThumb})`
+                    span.textContent=meal.strMeal
+                    li.appendChild(div)
+                    li.appendChild(span)
+                    ul.appendChild(li)
+                    e.target.setAttribute('id','styled')
+                    anotherMeals={
+                        id:meal.idMeal,
+                        name:meal.strMeal,
+                        backgroundImage:`url(${meal.strMealThumb})`
+                    }
+                    mealsList.push(anotherMeals)
+                    localStorage.setItem('meals',JSON.stringify(mealsList))
+                }
+            })
         })
     })
-    // heart.addEventListener("click",()=>{
-    //     if(heartNum===0){
-    //         heart.style.backgroundImage="url(./images/heart1.png)"
-    //         const li=document.createElement('li')
-    //         const div=document.createElement('div')
-    //         const span=document.createElement('span')
-    //         li.id=randomMeal.idMeal
-    //         div.style.backgroundImage=`url(${randomMeal.strMealThumb})`
-    //         span.textContent=randomMeal.strMeal
-    //         li.appendChild(div)
-    //         li.appendChild(span)
-    //         ul.appendChild(li)
-    //         heartNum++
-    //         meals={
-    //             id:randomMeal.idMeal,
-    //             name:randomMeal.strMeal,
-    //             heartNum:heartNum,
-    //             backgroundImage:`url(${randomMeal.strMealThumb})`
-    //         }
-    //         mealsList.push(meals)
-    //         localStorage.setItem('meals',JSON.stringify(mealsList))
-    //     }
-    //     else if(heartNum===1){
-    //         heart.style.backgroundImage="url(./images/heart.png)"
-    //         heartNum--
-    //         const parent=document.getElementById("mid-low")
-    //         const child=document.getElementById(randomMeal.idMeal)
-    //         parent.removeChild(child)
-    //         const cleanList=mealsList.filter(function(List){
-    //             return List.id!==mealsList[mealsList.length-1].id
-    //         })
-    //         mealsList=cleanList
-    //         localStorage.setItem('meals',JSON.stringify(mealsList))
-    //     }
-    // })
 }
 
 async function sth(){
@@ -286,7 +287,6 @@ async function sth(){
         }
     }
 }
-
 
 // window.onclick = e => {
 //     console.log(e.target);  // to get the element
