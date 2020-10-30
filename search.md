@@ -6,20 +6,20 @@
 <br>
 
 ## Result
-돋보기 버튼을 눌렀을 때, 앞서 `Using Meal API with async/await`에서 소개한 `getMealsBySearch`함수를 통해 `input.value`값에 해당하는 배열을 `meals`로 불러온다.  
-이때 `await`기능이 사용되는데 이를 위해서는 `async`가 필요하다. 이는 다음과 같이 들어갈 수 있다.
+돋보기 버튼을 눌렀을 때, 앞서 `Using Meal API with async/await`에서 소개한 `getMealsBySearch`함수를 통해 `input.value`값에 해당하는 배열을 `meals`로 불러옵니다. 
+이때 `await`기능이 사용되는데 이를 위해서는 `async`가 필요합니다. 이는 다음과 같이 들어갈 수 있습니다.
 ```js
 searchButton.addEventListener("click",async(e)=>{
     const meals=await getMealsBySearch(input.value)
 ```
-값을 불러온 후 `input`값이 있으면 다음으로 넘어가고 `getMealsBySearch`값이 있으면 또 다음으로 넘어간다.  
+값을 불러온 후 `input`값이 있으면 다음으로 넘어가고 `getMealsBySearch`값이 있으면 또 다음으로 넘어갑니다.  
 그 이후에는 그 전에 있던 결과들을 다음과 같이 `hasChildNodes`를 통해 다 삭제하고,
 ```js
 while(result.hasChildNodes()){
     result.removeChild(result.firstChild)
 ```
- 배열의 값 하나하나에 해당하는 `html`의 `li`를 추가해 값을 넣는다.  
- 아래는 이러한 코드들의 전문이다.
+ 배열의 값 하나하나에 해당하는 `html`의 `li`를 추가해 값을 넣습니다.  
+ 아래는 이러한 코드들의 전문입니다.
 
 ```js
 const input=document.querySelector("#input")
