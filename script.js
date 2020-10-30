@@ -23,6 +23,13 @@ async function useGetRandomMeal(){
         }
         heart.style.backgroundImage="url(./images/heart.png)"
         heartNum=0
+        for(let v=0; v<mealsList.length;v++){
+            if(randomMeal.idMeal===mealsList[v].id){
+                heart.style.backgroundImage='url("./images/heart1.png")'
+                heart.setAttribute('id','styled')
+                heartNum=1
+            }
+        }
     }
 
     async function getRandomMeal1(){
@@ -42,6 +49,13 @@ async function useGetRandomMeal(){
         heart.style.backgroundImage="url(./images/heart.png)"
         heartNum=0
         randomMeal=randomMeal1
+        for(let v=0; v<mealsList.length;v++){
+            if(randomMeal1.idMeal===mealsList[v].id){
+                heart.style.backgroundImage='url("./images/heart1.png")'
+                heart.setAttribute('id','styled')
+                heartNum=1
+            }
+        }
     }
 
     function clickRandom(){
@@ -102,7 +116,7 @@ async function useGetRandomMeal(){
                 const child=document.getElementById(randomMeal.idMeal)
                 parent.removeChild(child)
                 const cleanList=mealsList.filter(function(List){
-                    return List.id!==mealsList[mealsList.length-1].id
+                    return List.id!==randomMeal.idMeal
                 })
                 mealsList=cleanList
                 localStorage.setItem('meals',JSON.stringify(mealsList))
@@ -183,7 +197,6 @@ async function getMealsBySearch(term){
     const meals= respData.meals
     return meals
 }
-
 
 const input=document.querySelector("#input")
 const searchButton=document.querySelector("#button")
@@ -288,12 +301,6 @@ async function sth(){
         }
     }
 }
-
-// window.onclick = e => {
-//     console.log(e.target);  // to get the element
-//     console.log(e.target.tagName);  // to get the element tag name alone
-// }
-// //클릭 타겟을 얻는 거
 
 function init(){
     useGetRandomMeal()
