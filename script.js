@@ -1,253 +1,325 @@
-document.querySelector("#header-category").addEventListener("click",()=>{
-    if(document.getElementById("hidden").style.display==="none"){ 
-        document.getElementById("hidden").style.display="inline-block"
-        document.getElementById("main-category").style.display="none"
+const headerCategory=document.querySelector("#header-category")
+const hidden=document.querySelector("#hidden")
+const mainCategory=document.querySelector("#main-category")
+const input=document.querySelector("#input")
+const search=document.querySelector("#search")
+const headerCreate=document.querySelector("#header-create")
+const headerCreateSpace= document.querySelector("#header-create-space")
+const headerApps=document.querySelector("#header-apps")
+const headerAppsSpace =document.querySelector("#header-apps-space")
+const headerAlert=document.querySelector("#header-alert")
+const headerAlertSpace=document.querySelector("#header-alert-space")
+const headerLogin=document.querySelector("#header-login")
+const headerLoginSpace=document.querySelector("#header-login-space")
+const mainHome=document.querySelector("#main-home")
+const containerHome=document.querySelector("#container-home")
+const mainHot=document.querySelector("#main-hot")
+const containerHot=document.querySelector("#container-hot")
+const mainSub=document.querySelector("#main-sub")
+const containerSub=document.querySelector("#container-sub")
+const mainStorage=document.querySelector("#main-storage")
+const containerStorage=document.querySelector("#container-storage")
+const video=document.querySelector("#video")
+const stick=document.querySelector("#stick")
+const img=document.querySelector("#img")
+const playing=document.querySelector("#playing")
+const add=document.querySelector("#add")
+const late=document.querySelector("#late")
+const information=document.querySelector("#information")
+const time1=document.querySelector("#time1")
+const back1=document.querySelector("#back1")
+const x=document.querySelector("#x")
+const expand=document.querySelector("#expand")
+const contract=document.querySelector("#contract")
+const mainVideos=document.querySelector("#main-videos")
+const dotBtn=document.querySelector("#dot-btn")
+const dotsM=document.querySelector("#dotsM")
+const idClose=document.querySelector("#close")
+const videoDownVideos=document.querySelector("#video-down-videos")
+const VideoDownMore=document.querySelector("#video-down-more")
+const moreVideos=document.querySelector("#more-videos")
+const VideoDownName=document.querySelector("#video-down-name")
+const lateM=document.querySelector("#lateM")
+const addM=document.querySelector("#addM")
+const dots=document.querySelector("#dots")
+const late1=document.querySelector("#late1")
+const late1M=document.querySelector("#late1M")
+const add1=document.querySelector("#add1")
+const add1M=document.querySelector("#add1M")
+const dots1=document.querySelector("#dots1")
+const dots1M=document.querySelector("#dots1M")
+const dotBtn1=document.querySelector("#dot-btn1")
+const searcha1=document.querySelector("#searcha1")
+const searchs1=document.querySelector("#searchs1")
+const searcha2=document.querySelector("#searcha2")
+const searchs2=document.querySelector("#searchs2")
+const searcha3=document.querySelector("#searcha3")
+const searchs3=document.querySelector("#searchs3")
+const searcha4=document.querySelector("#searcha4")
+const searchs4=document.querySelector("#searchs4")
+const searcha5=document.querySelector("#searcha5")
+const searchs5=document.querySelector("#searchs5")
+const searcha6=document.querySelector("#searcha6")
+const searchs6=document.querySelector("#searchs6")
+const searcha7=document.querySelector("#searcha7")
+const searchs7=document.querySelector("#searchs7")
+
+headerCategory.addEventListener("click",()=>{
+    if(hidden.style.display==="none"){ 
+        hidden.style.display="inline-block"
+        mainCategory.style.display="none"
     } else{
-        document.getElementById("main-category").style.display="inline-block"
-        document.getElementById("hidden").style.display="none"
+        mainCategory.style.display="inline-block"
+        hidden.style.display="none"
     }
 })
 
-document.querySelector("#input").addEventListener("click",()=>{
-    document.getElementById("search").style.display="inline-block"
+input.addEventListener("click",()=>{
+    search.style.display="inline-block"
 })
 
-document.querySelector("#header-create").addEventListener("click",()=>{
-    document.getElementById("header-create-space").style.display="inline-block"
+headerCreate.addEventListener("click",()=>{
+    headerCreateSpace.style.display="inline-block"
 })
 
-document.querySelector("#header-apps").addEventListener("click",()=>{
-    document.getElementById("header-apps-space").style.display="inline-block"
+headerApps.addEventListener("click",()=>{
+    headerAppsSpace.style.display="inline-block"
 })
 
-document.querySelector("#header-alert").addEventListener("click",()=>{
-    document.getElementById("header-alert-space").style.display="inline-block"
+headerAlert.addEventListener("click",()=>{
+    headerAlertSpace.style.display="inline-block"
 })
 
-document.querySelector("#header-login").addEventListener("click",()=>{
-    document.getElementById("header-login-space").style.display="inline-block"
+headerLogin.addEventListener("click",()=>{
+    headerLoginSpace.style.display="inline-block"
 })
 
-document.querySelector("#main-home").addEventListener("click",()=>{
-    document.getElementById("main-home").style.backgroundImage="url(images/home1.PNG)"
-    document.getElementById("container-home").style.display="block"
-    document.getElementById("main-hot").style.backgroundImage="url(images/hot.png)"
-    document.getElementById("container-hot").style.display="none"
-    document.getElementById("main-sub").style.backgroundImage="url(images/sub.png)"
-    document.getElementById("container-sub").style.display="none"
-    document.getElementById("main-storage").style.backgroundImage="url(images/storage.png)"
-    document.getElementById("container-storage").style.display="none"
+mainHome.addEventListener("click",()=>{
+    mainHome.style.backgroundImage="url(images/home1.PNG)"
+    containerHome.style.display="block"
+    mainHot.style.backgroundImage="url(images/hot.png)"
+    containerHot.style.display="none"
+    mainSub.style.backgroundImage="url(images/sub.png)"
+    containerSub.style.display="none"
+    mainStorage.style.backgroundImage="url(images/storage.png)"
+    containerStorage.style.display="none"
 })
 
-document.querySelector("#main-hot").addEventListener("click",()=>{
-    document.getElementById("main-home").style.backgroundImage="url(images/home.PNG)"
-    document.getElementById("container-home").style.display="none"
-    document.getElementById("main-hot").style.backgroundImage="url(images/hot1.png)"
-    document.getElementById("container-hot").style.display="block"
-    document.getElementById("main-sub").style.backgroundImage="url(images/sub.png)"
-    document.getElementById("container-sub").style.display="none"
-    document.getElementById("main-storage").style.backgroundImage="url(images/storage.png)"
-    document.getElementById("container-storage").style.display="none"
+mainHot.addEventListener("click",()=>{
+    mainHome.style.backgroundImage="url(images/home.PNG)"
+    containerHome.style.display="none"
+    mainHot.style.backgroundImage="url(images/hot1.png)"
+    containerHot.style.display="block"
+    mainSub.style.backgroundImage="url(images/sub.png)"
+    containerSub.style.display="none"
+    mainStorage.style.backgroundImage="url(images/storage.png)"
+    containerStorage.style.display="none"
 })
 
-document.querySelector("#main-sub").addEventListener("click",()=>{
-    document.getElementById("main-home").style.backgroundImage="url(images/home.PNG)"
-    document.getElementById("container-home").style.display="none"
-    document.getElementById("main-hot").style.backgroundImage="url(images/hot.png)"
-    document.getElementById("container-hot").style.display="none"
-    document.getElementById("main-sub").style.backgroundImage="url(images/sub1.png)"
-    document.getElementById("container-sub").style.display="block"
-    document.getElementById("main-storage").style.backgroundImage="url(images/storage.png)"
-    document.getElementById("container-storage").style.display="none"
+mainSub.addEventListener("click",()=>{
+    mainHome.style.backgroundImage="url(images/home.PNG)"
+    containerHome.style.display="none"
+    mainHot.style.backgroundImage="url(images/hot.png)"
+    containerHot.style.display="none"
+    mainSub.style.backgroundImage="url(images/sub1.png)"
+    containerSub.style.display="block"
+    mainStorage.style.backgroundImage="url(images/storage.png)"
+    containerStorage.style.display="none"
 })
 
-document.querySelector("#main-storage").addEventListener("click",()=>{
-    document.getElementById("main-home").style.backgroundImage="url(images/home.PNG)"
-    document.getElementById("container-home").style.display="none"
-    document.getElementById("main-hot").style.backgroundImage="url(images/hot.png)"
-    document.getElementById("container-hot").style.display="none"
-    document.getElementById("main-sub").style.backgroundImage="url(images/sub.png)"
-    document.getElementById("container-sub").style.display="none"
-    document.getElementById("main-storage").style.backgroundImage="url(images/storage1.png)"
-    document.getElementById("container-storage").style.display="flex"
+mainStorage.addEventListener("click",()=>{
+    mainHome.style.backgroundImage="url(images/home.PNG)"
+    containerHome.style.display="none"
+    mainHot.style.backgroundImage="url(images/hot.png)"
+    containerHot.style.display="none"
+    mainSub.style.backgroundImage="url(images/sub.png)"
+    containerSub.style.display="none"
+    mainStorage.style.backgroundImage="url(images/storage1.png)"
+    containerStorage.style.display="flex"
 })
 
-document.querySelector("#video").addEventListener("click",()=>{
-    document.getElementById("stick").style.display="block"
-    document.getElementById("img").style.backgroundColor="grey"
-    document.getElementById("playing").style.display="block"
-    document.getElementById("add").style.display="none"
-    document.getElementById("late").style.display="none"
-    document.getElementById("information").style.marginTop="4px"
-    document.getElementById("time1").style.display="none"
-    document.getElementById("back1").style.display="none"
+
+video.addEventListener("click",()=>{
+    stick.style.display="block"
+    img.style.backgroundColor="grey"
+    playing.style.display="block"
+    add.style.display="none"
+    late.style.display="none"
+    information.style.marginTop="4px"
+    time1.style.display="none"
+    back1.style.display="none"
 })
 
-document.querySelector("#x").addEventListener("click",()=>{
-    document.getElementById("stick").style.display="none"
-    document.getElementById("img").style.backgroundColor="transparent"
-    document.getElementById("playing").style.display="none"
-    document.getElementById("add").style.display=""
-    document.getElementById("late").style.display=""
-    document.getElementById("information").style.marginTop="0"
-    document.getElementById("time1").style.display=""
-    document.getElementById("back1").style.display=""
+x.addEventListener("click",()=>{
+    stick.style.display="none"
+    img.style.backgroundColor="transparent"
+    playing.style.display="none"
+    add.style.display=""
+    late.style.display=""
+    information.style.marginTop="0"
+    time1.style.display=""
+    back1.style.display=""
 })
 
-document.querySelector("#expand").addEventListener("click",()=>{
-    document.getElementById("stick").style.width="1400px"
-    document.getElementById("stick").style.height="788px"
-    document.getElementById("expand").style.display="none"
-    document.getElementById("contract").style.display="inline-block"
+expand.addEventListener("click",()=>{
+    stick.style.width="1400px"
+    stick.style.height="788px"
+    expand.style.display="none"
+    contract.style.display="inline-block"
 })
 
-document.querySelector("#contract").addEventListener("click",()=>{
-    document.getElementById("stick").style.width="390px"
-    document.getElementById("stick").style.height="220px"
-    document.getElementById("contract").style.display="none"
-    document.getElementById("expand").style.display="inline-block"
+contract.addEventListener("click",()=>{
+    stick.style.width="390px"
+    stick.style.height="220px"
+    contract.style.display="none"
+    expand.style.display="inline-block"
 })
 
-document.querySelector("#main-videos").addEventListener("click",()=>{
-    document.getElementById("search").style.display="none"
-    document.getElementById("header-create-space").style.display="none"
-    document.getElementById("header-apps-space").style.display="none"
-    document.getElementById("header-alert-space").style.display="none"
-    document.getElementById("header-login-space").style.display="none"
+mainVideos.addEventListener("click",()=>{
+    search.style.display="none"
+    headerCreateSpace.style.display="none"
+    headerAppsSpace.style.display="none"
+    headerAlertSpace.style.display="none"
+    headerLoginSpace.style.display="none"
 })
 
-document.querySelector("#dot-btn").addEventListener("click",()=>{
-    document.getElementById("dotsM").style.display="none"
+dotBtn.addEventListener("click",()=>{
+    dotsM.style.display="none"
 })
 
-document.querySelector("#close").addEventListener("click",()=>{
-    document.getElementById("video-down-videos").style.display="none"
-    document.getElementById("video-down-more").style.display="none"
-    document.getElementById("more-videos").style.display="none"
-    document.getElementById("video-down-name").textContent="해당 정보를 더 이상 표시하지 않습니다."
-    document.getElementById("video-down-name").style.textAlign="center"
+idClose.addEventListener("click",()=>{
+    videoDownVideos.style.display="none"
+    VideoDownMore.style.display="none"
+    moreVideos.style.display="none"
+    VideoDownName.textContent="해당 정보를 더 이상 표시하지 않습니다."
+    VideoDownName.style.textAlign="center"
 })
 
-document.querySelector("#late").addEventListener("click",function(event){
-    if(document.getElementById("late").style.backgroundImage==='url("images/1.PNG")'){
-        document.getElementById("lateM").textContent="추가됨"
-        document.getElementById("lateM").style.display="inline-block"
-        document.getElementById("late").style.backgroundImage="url(images/5.PNG)"
+late.addEventListener("click",function(event){
+    if(late.style.backgroundImage==='url("images/1.PNG")'){
+        lateM.textContent="추가됨"
+        lateM.style.display="inline-block"
+        late.style.backgroundImage="url(images/5.PNG)"
         setTimeout(()=>{
-            document.getElementById("lateM").style.display="none"
+            lateM.style.display="none"
         },2000)
     }else{
-        document.getElementById("lateM").textContent="삭제됨"
-        document.getElementById("lateM").style.display="inline-block"
-        document.getElementById("late").style.backgroundImage="url(images/1.PNG)"
+        lateM.textContent="삭제됨"
+        lateM.style.display="inline-block"
+        late.style.backgroundImage="url(images/1.PNG)"
         setTimeout(()=>{
-            document.getElementById("lateM").style.display="none"
+            lateM.style.display="none"
         },2000)
     }
     event.stopPropagation()
 })
 
-document.querySelector("#add").addEventListener("click",function(event){
-    if(document.getElementById("add").style.backgroundImage==='url("images/2.PNG")'){
-        document.getElementById("addM").textContent="추가됨"
-        document.getElementById("addM").style.display="inline-block"
-        document.getElementById("add").style.backgroundImage="url(images/5.PNG)"
+add.addEventListener("click",function(event){
+    if(add.style.backgroundImage==='url("images/2.PNG")'){
+        addM.textContent="추가됨"
+        addM.style.display="inline-block"
+        add.style.backgroundImage="url(images/5.PNG)"
         setTimeout(()=>{
-            document.getElementById("addM").style.display="none"
+            addM.style.display="none"
         },2000)
     }else{
-        document.getElementById("addM").textContent="삭제됨"
-        document.getElementById("addM").style.display="inline-block"
-        document.getElementById("add").style.backgroundImage="url(images/2.PNG)"
+        addM.textContent="삭제됨"
+        addM.style.display="inline-block"
+        add.style.backgroundImage="url(images/2.PNG)"
         setTimeout(()=>{
-            document.getElementById("addM").style.display="none"
+            addM.style.display="none"
         },2000)
     }
     event.stopPropagation()
 })
 
-document.querySelector("#dots").addEventListener("click",()=>{
-    document.getElementById("dotsM").style.display="inline-block"
+dots.addEventListener("click",function(event){
+    dotsM.style.display="inline-block"
+    event.stopPropagation()
 })
 
-document.querySelector("#late1").addEventListener("click",()=>{
-    if(document.getElementById("late1").style.backgroundImage==='url("images/1.PNG")'){
-        document.getElementById("late1M").textContent="추가됨"
-        document.getElementById("late1M").style.display="inline-block"
-        document.getElementById("late1").style.backgroundImage="url(images/5.PNG)"
+dotsM.addEventListener("click",function(event){
+    event.stopPropagation()
+})
+
+late1.addEventListener("click",()=>{
+    if(late1.style.backgroundImage==='url("images/1.PNG")'){
+        late1M.textContent="추가됨"
+        late1M.style.display="inline-block"
+        late1.style.backgroundImage="url(images/5.PNG)"
         setTimeout(()=>{
-            document.getElementById("late1M").style.display="none"
+            late1M.style.display="none"
         },2000)
     }else{
-        document.getElementById("late1M").textContent="삭제됨"
-        document.getElementById("late1M").style.display="inline-block"
-        document.getElementById("late1").style.backgroundImage="url(images/1.PNG)"
+        late1M.textContent="삭제됨"
+        late1M.style.display="inline-block"
+        late1.style.backgroundImage="url(images/1.PNG)"
         setTimeout(()=>{
-            document.getElementById("late1M").style.display="none"
+            late1M.style.display="none"
         },2000)
     }
 })
 
-document.querySelector("#add1").addEventListener("click",()=>{
-    if(document.getElementById("add1").style.backgroundImage==='url("images/2.PNG")'){
-        document.getElementById("add1M").textContent="추가됨"
-        document.getElementById("add1M").style.display="inline-block"
-        document.getElementById("add1").style.backgroundImage="url(images/5.PNG)"
+add1.addEventListener("click",()=>{
+    if(add1.style.backgroundImage==='url("images/2.PNG")'){
+        add1M.textContent="추가됨"
+        add1M.style.display="inline-block"
+        add1.style.backgroundImage="url(images/5.PNG)"
         setTimeout(()=>{
-            document.getElementById("add1M").style.display="none"
+            document.querySelector("vadd1M").style.display="none"
         },2000)
     }else{
-        document.getElementById("add1M").textContent="삭제됨"
-        document.getElementById("add1M").style.display="inline-block"
-        document.getElementById("add1").style.backgroundImage="url(images/2.PNG)"
+        add1M.textContent="삭제됨"
+        add1M.style.display="inline-block"
+        add1.style.backgroundImage="url(images/2.PNG)"
         setTimeout(()=>{
-            document.getElementById("add1M").style.display="none"
+            add1M.style.display="none"
         },2000)
     }
 })
 
-document.querySelector("#dots1").addEventListener("click",()=>{
-    document.getElementById("dots1M").style.display="inline-block"
+dots1.addEventListener("click",()=>{
+    dots1M.style.display="inline-block"
 })
 
-document.querySelector("#dot-btn1").addEventListener("click",()=>{
-    document.getElementById("dots1M").style.display="none"
+dotBtn1.addEventListener("click",()=>{
+    dots1M.style.display="none"
 })
 
-document.querySelector("#searcha1").addEventListener("click",()=>{
-    document.getElementById("searcha1").style.display="none"
-    document.getElementById("searchs1").textContent="해당정보를 삭제합니다."
+searcha1.addEventListener("click",()=>{
+    searcha1.style.display="none"
+    searchs1.textContent="해당정보를 삭제합니다."
 })
-document.querySelector("#searcha2").addEventListener("click",()=>{
-    document.getElementById("searcha2").style.display="none"
-    document.getElementById("searchs2").textContent="해당정보를 삭제합니다."
+searcha2.addEventListener("click",()=>{
+    searcha2.style.display="none"
+    searchs2.textContent="해당정보를 삭제합니다."
 })
-document.querySelector("#searcha3").addEventListener("click",()=>{
-    document.getElementById("searcha3").style.display="none"
-    document.getElementById("searchs3").textContent="해당정보를 삭제합니다."
+searcha3.addEventListener("click",()=>{
+    searcha3.style.display="none"
+    searchs3.textContent="해당정보를 삭제합니다."
 })
-document.querySelector("#searcha4").addEventListener("click",()=>{
-    document.getElementById("searcha4").style.display="none"
-    document.getElementById("searchs4").textContent="해당정보를 삭제합니다."
+searcha4.addEventListener("click",()=>{
+    searcha4.style.display="none"
+    searchs4.textContent="해당정보를 삭제합니다."
 })
-document.querySelector("#searcha5").addEventListener("click",()=>{
-    document.getElementById("searcha5").style.display="none"
-    document.getElementById("searchs5").textContent="해당정보를 삭제합니다."
+searcha5.addEventListener("click",()=>{
+    searcha5.style.display="none"
+    searchs5.textContent="해당정보를 삭제합니다."
 })
-document.querySelector("#searcha6").addEventListener("click",()=>{
-    document.getElementById("searcha6").style.display="none"
-    document.getElementById("searchs6").textContent="해당정보를 삭제합니다."
+searcha6.addEventListener("click",()=>{
+    searcha6.style.display="none"
+    searchs6.textContent="해당정보를 삭제합니다."
 })
-document.querySelector("#searcha7").addEventListener("click",()=>{
-    document.getElementById("searcha7").style.display="none"
-    document.getElementById("searchs7").textContent="해당정보를 삭제합니다."
+searcha7.addEventListener("click",()=>{
+    searcha7.style.display="none"
+    searchs7.textContent="해당정보를 삭제합니다."
 })
 
-document.querySelector("#video-down-more").addEventListener("click",()=>{
-    document.getElementById("video15").style.display="inline-block"
-    document.getElementById("video16").style.display="inline-block"
-    document.getElementById("video17").style.display="inline-block"
-    document.getElementById("video18").style.display="inline-block"
-    document.getElementById("video19").style.display="inline-block"
-    document.getElementById("video-down-more").style.display="none"
+VideoDownMore.addEventListener("click",()=>{
+    for(let i=15; i<20; i++){
+        const div=document.createElement('div')
+        div.setAttribute('id',`video${i}`)
+        moreVideos.appendChild(div)
+    }
+    VideoDownMore.style.display="none"
 })
