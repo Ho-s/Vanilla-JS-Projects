@@ -49,20 +49,6 @@ const add1M=document.querySelector("#add1M")
 const dots1=document.querySelector("#dots1")
 const dots1M=document.querySelector("#dots1M")
 const dotBtn1=document.querySelector("#dot-btn1")
-const searcha1=document.querySelector("#searcha1")
-const searchs1=document.querySelector("#searchs1")
-const searcha2=document.querySelector("#searcha2")
-const searchs2=document.querySelector("#searchs2")
-const searcha3=document.querySelector("#searcha3")
-const searchs3=document.querySelector("#searchs3")
-const searcha4=document.querySelector("#searcha4")
-const searchs4=document.querySelector("#searchs4")
-const searcha5=document.querySelector("#searcha5")
-const searchs5=document.querySelector("#searchs5")
-const searcha6=document.querySelector("#searcha6")
-const searchs6=document.querySelector("#searchs6")
-const searcha7=document.querySelector("#searcha7")
-const searchs7=document.querySelector("#searchs7")
 
 headerCategory.addEventListener("click",()=>{
     if(hidden.style.display==="none"){ 
@@ -266,7 +252,7 @@ add1.addEventListener("click",()=>{
         add1M.style.display="inline-block"
         add1.style.backgroundImage="url(images/5.PNG)"
         setTimeout(()=>{
-            document.querySelector("vadd1M").style.display="none"
+            add1M.style.display="none"
         },2000)
     }else{
         add1M.textContent="삭제됨"
@@ -286,34 +272,14 @@ dotBtn1.addEventListener("click",()=>{
     dots1M.style.display="none"
 })
 
-searcha1.addEventListener("click",()=>{
-    searcha1.style.display="none"
-    searchs1.textContent="해당정보를 삭제합니다."
-})
-searcha2.addEventListener("click",()=>{
-    searcha2.style.display="none"
-    searchs2.textContent="해당정보를 삭제합니다."
-})
-searcha3.addEventListener("click",()=>{
-    searcha3.style.display="none"
-    searchs3.textContent="해당정보를 삭제합니다."
-})
-searcha4.addEventListener("click",()=>{
-    searcha4.style.display="none"
-    searchs4.textContent="해당정보를 삭제합니다."
-})
-searcha5.addEventListener("click",()=>{
-    searcha5.style.display="none"
-    searchs5.textContent="해당정보를 삭제합니다."
-})
-searcha6.addEventListener("click",()=>{
-    searcha6.style.display="none"
-    searchs6.textContent="해당정보를 삭제합니다."
-})
-searcha7.addEventListener("click",()=>{
-    searcha7.style.display="none"
-    searchs7.textContent="해당정보를 삭제합니다."
-})
+const aSearchList=document.querySelectorAll(".aSearch")
+const spanSearchList=document.querySelectorAll(".spanSearch")
+for(let i=0;i<aSearchList.length;i++){
+    aSearchList[i].addEventListener("click",()=>{
+        aSearchList[i].style.display="none"
+        spanSearchList[i].textContent="해당정보를 삭제합니다."
+    })
+}
 
 VideoDownMore.addEventListener("click",()=>{
     for(let i=15; i<20; i++){
