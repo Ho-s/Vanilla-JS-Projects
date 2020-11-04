@@ -66,7 +66,7 @@ body{
     display: contents;
 }
 
-li button,
+#history li button,
 #mid button{
     width: 48px;
     height: 24px;
@@ -100,7 +100,7 @@ li button,
     width: 80px;
 }
 
-li{
+#history li{
     font-weight: 600;
     text-shadow:-1px 0 #F2F1F6, 0 1px #F2F1F6, 1px 0 #F2F1F6, 0 -1px #F2F1F6;
 }
@@ -114,4 +114,110 @@ li{
     top:0;    
     z-index: 1;
     font-weight: 700;
+}
+
+#memo{
+    width: 300px;
+    max-height: 100%;
+    background-color: wheat;
+    position: absolute;
+    top:50px;
+    right: 50px;
+    padding:0;
+    list-style: none;
+    border-radius: 14px;
+    margin: 0;
+    overflow-y: auto;
+}
+
+#add-memo{
+    width: 24px;
+    height: 24px;
+    background-image: url(./images/plus.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 8px;
+    float: right;
+    cursor: pointer;
+}
+
+#memo-name{
+    margin: 8px;
+}
+
+#memo li{
+    width: 240px;
+    height: 240px;
+    background-color: white ;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px 1px;
+    margin: 20px auto;
+    position: relative;
+}
+
+#memo textarea{
+    border:none;
+    width: 240px;
+    height: 240px;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    resize: none;
+}
+#memo form{
+    position: relative;
+    height: 240px;
+}
+
+#memo button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 36px;
+    height: 24px;
+    margin: 8px;
+    padding: 0;
+    border: 1px solid black;
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+#changeBtn{
+    display: none;
+}
+
+#memo div{
+    font-weight: 500;
+    font-size: 14px;
+}
+
+#memo a{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px;
+    display: none;
+    width: 24px;
+    height: 24px;
+    background-image: url(./images/cross.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1100px){
+    #memo{
+        position: absolute;
+        top:auto;
+        bottom: auto;
+        left: auto;
+    }
+}
+
+@media screen and (max-width:670px){
+    #memo{
+        display: none;
+    }
 }
