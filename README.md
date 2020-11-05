@@ -5,6 +5,7 @@
 * <a href="timer.md">Timer</a>  
 * <a href="localstorage.md">`localStorage`(input)</a>
 * <a href="problems.md">Problems</a>  
+* <a href='history.md'>Update History</a>
 <br>
 
 ## Timer recording App
