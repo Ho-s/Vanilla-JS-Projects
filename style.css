@@ -259,8 +259,9 @@ body{
     height: 300px;
     position: relative;
     z-index: 100;
-    background-color: red;
+    background-color: wheat;
     background-blend-mode: multiply;
+    border-radius: 14px;
 }
 
 #alarmSet span{

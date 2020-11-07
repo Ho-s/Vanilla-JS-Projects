@@ -96,7 +96,7 @@ function makeList(){
     delBtn.textContent="삭제"
     delBtn.addEventListener("click",deleteRec)
     const date=new Date()
-    when.textContent=`${date.getFullYear()}년 ${date.getMonth()}월 ${date.getDate()}일`
+    when.textContent=`${date.getFullYear()}년 ${date.getMonth()+1}월 ${date.getDate()}일`
     howMany.textContent=`${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}`:seconds}`
     li.appendChild(when)
     li.appendChild(howMany)
