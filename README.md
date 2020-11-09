@@ -4,6 +4,7 @@
 * <a href="category.md">Category</a>
 * <a href="video.md">Video</a>
 * <a href="problems.md">Problems</a>  
+* <a href="history.md">Update History</a>  
 <br>
 
 # Youtube-Clone-Coding

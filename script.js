@@ -31,9 +31,7 @@ const back1=document.querySelector("#back1")
 const x=document.querySelector("#x")
 const expand=document.querySelector("#expand")
 const contract=document.querySelector("#contract")
-const mainVideos=document.querySelector("#main-videos")
 const dotBtn=document.querySelector("#dot-btn")
-const dotsM=document.querySelector("#dotsM")
 const idClose=document.querySelector("#close")
 const videoDownVideos=document.querySelector("#video-down-videos")
 const VideoDownMore=document.querySelector("#video-down-more")
@@ -42,6 +40,7 @@ const VideoDownName=document.querySelector("#video-down-name")
 const lateM=document.querySelector("#lateM")
 const addM=document.querySelector("#addM")
 const dots=document.querySelector("#dots")
+const dotsM=document.querySelector("#dotsM")
 const late1=document.querySelector("#late1")
 const late1M=document.querySelector("#late1M")
 const add1=document.querySelector("#add1")
@@ -49,6 +48,30 @@ const add1M=document.querySelector("#add1M")
 const dots1=document.querySelector("#dots1")
 const dots1M=document.querySelector("#dots1M")
 const dotBtn1=document.querySelector("#dot-btn1")
+const body=document.querySelector('body')
+
+function clickInside(element,objective){
+    element.addEventListener('click',()=>{
+        window.addEventListener('click',function handler(e){
+            if(element.contains(e.target)){
+                objective.style.display="inline-block"
+            }else{
+                objective.style.display="none"
+                this.removeEventListener('click',handler)
+            }
+        })
+    })
+}
+
+clickInside(input,search)
+clickInside(headerApps,headerAppsSpace)
+clickInside(headerAlert,headerAlertSpace)
+clickInside(headerCreate,headerCreateSpace)
+clickInside(headerLogin,headerLoginSpace)
+
+search.addEventListener('click',(e)=>{
+    e.stopPropagation()
+})
 
 headerCategory.addEventListener("click",()=>{
     if(hidden.style.display==="none"){ 
@@ -58,26 +81,6 @@ headerCategory.addEventListener("click",()=>{
         mainCategory.style.display="inline-block"
         hidden.style.display="none"
     }
-})
-
-input.addEventListener("click",()=>{
-    search.style.display="inline-block"
-})
-
-headerCreate.addEventListener("click",()=>{
-    headerCreateSpace.style.display="inline-block"
-})
-
-headerApps.addEventListener("click",()=>{
-    headerAppsSpace.style.display="inline-block"
-})
-
-headerAlert.addEventListener("click",()=>{
-    headerAlertSpace.style.display="inline-block"
-})
-
-headerLogin.addEventListener("click",()=>{
-    headerLoginSpace.style.display="inline-block"
 })
 
 mainHome.addEventListener("click",()=>{
@@ -161,14 +164,6 @@ contract.addEventListener("click",()=>{
     expand.style.display="inline-block"
 })
 
-mainVideos.addEventListener("click",()=>{
-    search.style.display="none"
-    headerCreateSpace.style.display="none"
-    headerAppsSpace.style.display="none"
-    headerAlertSpace.style.display="none"
-    headerLoginSpace.style.display="none"
-})
-
 dotBtn.addEventListener("click",()=>{
     dotsM.style.display="none"
 })
@@ -181,7 +176,7 @@ idClose.addEventListener("click",()=>{
     VideoDownName.style.textAlign="center"
 })
 
-late.addEventListener("click",function(event){
+late.addEventListener("click",function(e){
     if(late.style.backgroundImage==='url("images/1.PNG")'){
         lateM.textContent="추가됨"
         lateM.style.display="inline-block"
@@ -197,10 +192,10 @@ late.addEventListener("click",function(event){
             lateM.style.display="none"
         },2000)
     }
-    event.stopPropagation()
+    e.stopPropagation()
 })
 
-add.addEventListener("click",function(event){
+add.addEventListener("click",function(e){
     if(add.style.backgroundImage==='url("images/2.PNG")'){
         addM.textContent="추가됨"
         addM.style.display="inline-block"
@@ -216,16 +211,16 @@ add.addEventListener("click",function(event){
             addM.style.display="none"
         },2000)
     }
-    event.stopPropagation()
+    e.stopPropagation()
 })
 
-dots.addEventListener("click",function(event){
+dots.addEventListener("click",function(e){
     dotsM.style.display="inline-block"
-    event.stopPropagation()
+    e.stopPropagation()
 })
 
-dotsM.addEventListener("click",function(event){
-    event.stopPropagation()
+dotsM.addEventListener("click",function(e){
+    e.stopPropagation()
 })
 
 late1.addEventListener("click",()=>{
