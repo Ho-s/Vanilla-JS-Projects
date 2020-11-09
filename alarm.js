@@ -94,13 +94,12 @@ function addAlarmClick(){
 
         
         form.addEventListener('submit',(e)=>{
-            
             if(Number(yearInput.value+
                 `${monthInput.value < 10 ? `0${monthInput.value}` : monthInput.value}`+
                 `${dayInput.value < 10 ? `0${dayInput.value}` : dayInput.value}`+
                 `${hoursInput.value < 10 ? `0${hoursInput.value}` : hoursInput.value}`+
                 `${minutesInput.value < 10 ? `0${minutesInput.value}` : minutesInput.value}`)
-                <
+                <=
                 Number(yearInput.value+
                 `${month < 10 ? `0${month}` : month}`+
                 `${day < 10 ? `0${day}` : day}`+
@@ -130,12 +129,12 @@ function addAlarmClick(){
                 li.appendChild(delbtn)
                 alarm.appendChild(li)
                 if (alarmList.length === 0) {
-                    li.id = 0
+                    li.setAttribute('name','0')
                 } else {
-                    li.id = Number(alarmList[alarmList.length - 1].id) + 1
-                }
+                    li.setAttribute('name',Number(alarmList[alarmList.length - 1].name)+1) 
+                }                
                 let contentsStorage = {
-                    id: li.id,
+                    name: li.getAttribute('name'),
                     contents: downDiv.textContent,
                     year:yearSpan.textContent,
                     month:monthSpan.textContent,
@@ -148,12 +147,11 @@ function addAlarmClick(){
                 body.removeChild(div)
                 body.removeChild(containBox)
                 body.removeEventListener('click',clickBody)
-
                 delbtn.addEventListener('click', (e) => {
                     const it = e.target.parentNode
                     alarm.removeChild(it)
                     const cleanList = alarmList.filter(function(that) {
-                        return that.id !== it.id
+                        return that.name !== it.getAttribute('name')
                     })
                     alarmList = cleanList
                     localStorage.setItem('alarmList', JSON.stringify(alarmList))
@@ -188,19 +186,18 @@ function loadAlarm() {
             li.appendChild(downDiv)
             li.appendChild(delbtn)
             alarm.appendChild(li)
-            li.id = alarmList[i].id
+            li.setAttribute('name',alarmList[i].name)
             yearSpan.textContent=alarmList[i].year
             monthSpan.textContent=alarmList[i].month
             daySpan.textContent=alarmList[i].day
             hoursSpan.textContent=alarmList[i].hours
             minutesSpan.textContent=alarmList[i].minutes
             downDiv.textContent=alarmList[i].contents
-
             delbtn.addEventListener('click', (e) => {
                 const it = e.target.parentNode
                 alarm.removeChild(it)
                 const cleanList = alarmList.filter(function(that) {
-                    return that.id !== it.id
+                    return that.name !== it.getAttribute('name')
                 })
                 alarmList = cleanList
                 localStorage.setItem('alarmList', JSON.stringify(alarmList))
@@ -229,8 +226,8 @@ function setAlarmEvent(){
                                     this.currentTime = 0;
                                     this.play();
                                 }, false);
-                                const gettingId=document.getElementById(alarmList[i].id)
-                                gettingId.remove()
+                                const gettingName=document.getElementsByName(alarmList[i].name)
+                                alarm.removeChild(gettingName[0])
                                 const containBox=document.createElement('div')
                                 const div=document.createElement('div')
                                 const alert=document.createElement('h3')
@@ -254,7 +251,7 @@ function setAlarmEvent(){
                 }
             }
         }
-    },6000)
+    },1000)
 }
 
 function init(){

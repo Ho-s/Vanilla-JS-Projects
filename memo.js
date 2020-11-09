@@ -30,7 +30,7 @@ function addMemoEvent() {
         memo.appendChild(li)
 
         textarea.addEventListener('blur',(e)=>{
-            textarea.style.animation='sth 1s'
+            textarea.style.animation='contracting 1s'
             setTimeout(()=>{
                 textarea.style.animation=''
             },900)
@@ -90,7 +90,7 @@ function loadMemo() {
             memo.appendChild(li)
 
             textarea.addEventListener('blur',(e)=>{
-                textarea.style.animation='sth 1s'
+                textarea.style.animation='contracting 1s'
                 setTimeout(()=>{
                     textarea.style.animation=''
                 },900)
@@ -135,4 +135,3 @@ function init() {
 }
 
 init()
-// load array.map((v,i)=>{return array[i].setAttribute('id',v)})

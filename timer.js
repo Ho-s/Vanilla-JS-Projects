@@ -34,17 +34,23 @@ function intimeEvent(){
     },4)
 }
 
+const video=document.querySelector('#video')
+
 let inter=-1
-document.querySelector("#start").addEventListener("click",()=>{
+const start=document.querySelector("#start")
+start.addEventListener("click",()=>{
     if(inter===-1){
         inter = setInterval(()=>{
             seconds++
         },1000)
         start.textContent="중지"
+        video.style.display='block'
     } else{
         clearInterval(inter)
         inter=-1
         start.textContent="시작"
+        video.style.display='none'
+        video.innerHTML='pause';
     }
 })
 
