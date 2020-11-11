@@ -33,7 +33,8 @@ canvas{
 
 .minus,
 .plus,
-.color{
+.color,
+.changeHow{
     cursor: pointer;
 }
 
