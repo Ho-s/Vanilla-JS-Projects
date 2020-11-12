@@ -57,7 +57,7 @@ function circleHandler(){
 function toolSet(){
     const plus= document.querySelector('.plus')
     plus.addEventListener('click',()=>{
-        if(sizeNumber<10){
+        if(sizeNumber<30){
             sizeNumber++
             document.querySelector('.size').textContent=sizeNumber
         }
