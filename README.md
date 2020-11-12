@@ -2,7 +2,7 @@
 I am a beginner.😊  
 Doing it for practice.😃  
 Please give me a lot of feedbacks.😁  
-Made it to record my study time.  
+This app can help you to make a password.  
 <br>
 
 ## Completion
