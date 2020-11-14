@@ -4,7 +4,6 @@ const ctx=canvas.getContext('2d')
 const Radian=(Math.PI/180)// radian=(Math.PI/180)*degrees
 
 function clockDraw(){
-
     ctx.beginPath();
         ctx.fillStyle='#e9e9e9'
         ctx.arc(250, 250, 242, 0, Math.PI*2, true) //outside
@@ -48,16 +47,6 @@ function clockDraw(){
         ctx.moveTo(132,48)
         ctx.lineTo(141,61) //11,12
     ctx.stroke();
-    // ctx.beginPath();
-    // ctx.moveTo(250,250)
-    // ctx.lineTo(250,0)
-    // ctx.moveTo(250,250)
-    // ctx.lineTo(250,500)
-    // ctx.moveTo(250,250)
-    // ctx.lineTo(0,250)
-    // ctx.moveTo(250,250)
-    // ctx.lineTo(500,250)
-    // ctx.stroke();
 }
 
 function eventCall(){
@@ -70,58 +59,59 @@ function eventCall(){
 
             function delTrace(){
                 ctx.beginPath()
-                ctx.lineWidth='9'
-                ctx.strokeStyle='#e9e9e9'
-                ctx.arc(250,250,140, Radian*(((minutes-1)*6)-90), Radian*(((minutes-1)*6)-90), true) 
-                ctx.lineTo(250,250)
+                    ctx.lineWidth='9'
+                    ctx.strokeStyle='#e9e9e9'
+                    ctx.arc(250,250,140, Radian*(((minutes-1)*6)-90), Radian*(((minutes-1)*6)-90), true) 
+                    ctx.lineTo(250,250)
                 ctx.stroke()
 
                 ctx.beginPath()
-                ctx.lineWidth='16'
-                ctx.strokeStyle='#e9e9e9'
-                ctx.arc(250,250,100, Radian*(((hours-1)*30)-90), Radian*(((hours-1)*30)-90), true) 
-                ctx.lineTo(250,250)
+                    ctx.lineWidth='16'
+                    ctx.strokeStyle='#e9e9e9'
+                    ctx.arc(250,250,100, Radian*(((hours-1)*30)-90), Radian*(((hours-1)*30)-90), true) 
+                    ctx.lineTo(250,250)
                 ctx.stroke()
 
                 ctx.beginPath()
-                ctx.lineWidth='4'
-                ctx.strokeStyle='#e9e9e9'
-                ctx.arc(250,250,180, Radian*(((seconds-1)*6)-90), Radian*(((seconds-1)*6)-90), true) 
-                ctx.lineTo(250,250)
+                    ctx.lineWidth='4'
+                    ctx.strokeStyle='#e9e9e9'
+                    ctx.arc(250,250,180, Radian*(((seconds-1)*6)-90), Radian*(((seconds-1)*6)-90), true) 
+                    ctx.lineTo(250,250)
                 ctx.stroke()
             }
 
             function hoursHand(){
                 ctx.beginPath()
-                ctx.lineCap='round'
-                ctx.lineWidth='16'
-                ctx.strokeStyle='black'
-                ctx.arc(250,250,100, Radian*((hours*30)-90), Radian*((hours*30)-90), true) 
-                ctx.lineTo(250,250)
+                    ctx.lineCap='round'
+                    ctx.lineWidth='16'
+                    ctx.strokeStyle='black'
+                    ctx.arc(250,250,100, Radian*((hours*30)-90), Radian*((hours*30)-90), true) 
+                    ctx.lineTo(250,250)
                 ctx.stroke()
             }
         
             function minutesHand(){
                 ctx.beginPath()
-                ctx.lineWidth='8'
-                ctx.strokeStyle='grey'
-                ctx.arc(250,250,140, Radian*((minutes*6)-90), Radian*((minutes*6)-90), true) 
-                ctx.lineTo(250,250)
+                    ctx.lineWidth='8'
+                    ctx.strokeStyle='grey'
+                    ctx.arc(250,250,140, Radian*((minutes*6)-90), Radian*((minutes*6)-90), true) 
+                    ctx.lineTo(250,250)
                 ctx.stroke()
             }
         
             function secondsHand(){
                 ctx.beginPath()
-                ctx.lineWidth='3'
-                ctx.strokeStyle='black'
-                ctx.arc(250,250,180, Radian*((seconds*6)-90), Radian*((seconds*6)-90), true) 
-                ctx.lineTo(250,250)
+                    ctx.lineWidth='3'
+                    ctx.strokeStyle='white'
+                    ctx.arc(250,250,180, Radian*((seconds*6)-90), Radian*((seconds*6)-90), true) 
+                    ctx.lineTo(250,250)
                 ctx.stroke()
             }
 
             function paintDot(){
                 ctx.beginPath();
-                ctx.arc(250,250,10, 0, Math.PI*2, true) //middle dot
+                    ctx.arc(250,250,10, 0, Math.PI*2, true) //middle dot
+                    ctx.fillStyle='white'
                 ctx.fill();
             }
             delTrace()
