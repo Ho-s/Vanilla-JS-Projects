@@ -4,7 +4,7 @@
  
 <br>
 
-## Recipe App
+## Clock App
 I am a beginner.:blush:  
 Doing it for practice.:smiley:  
 Please give me a lot of feedbacks.:grin:  

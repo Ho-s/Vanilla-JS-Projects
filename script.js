@@ -122,10 +122,6 @@ function eventCall(){
         }
         handDraw()
     },4)
-    setInterval(()=>{
-        ctx.clearRect(0,0,500,500)
-        clockDraw()
-    },60000)
 }
 
 function init(){
