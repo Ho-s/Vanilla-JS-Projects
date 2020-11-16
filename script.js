@@ -1,20 +1,29 @@
 const chobo=document.querySelector('.chobo')
-const noraml=document.querySelector('.normal')
+const normal=document.querySelector('.normal')
 const gosu=document.querySelector('.gosu')
+const lifeDiv=document.querySelector('.life')
+const whole=document.querySelector('.whole')
 
-function addChoboEvent(){
-    chobo.addEventListener('click',()=>{
-        const nonogram=[]
+function createNonogram(n,a,b){
+    whole.style.width=`${a}px`
+    whole.style.height=`${a}px`
+    whole.style.margin=`${b}px auto`
+
+    chobo.style.display='none'
+    normal.style.display='none'
+    gosu.style.display='none'
+
+    const nonogram=[]
+    let blackCount=0
+    const div=document.createElement('div')
+
+    function createSpace(){
         let rowIndex=1
-        let cellIndex=1
-        let n=0
+        let columnIndex=1
         let v=0
-        let blackWhite=[]
-        const div=document.createElement('div')
-        div.setAttribute('class','small')
-        for(let i=0;i<36;i++){
+        for(let i=0;i<(n+1)*(n+1);i++){
             const block=document.createElement('div')
-            if(i<7||i===12||i===18||i===24||i===30){
+            if(i<(n+1)||i%(n+1)===0){
                 block.setAttribute('class','numbers')
                 block.id=v
                 v++
@@ -23,30 +32,33 @@ function addChoboEvent(){
                 if(random===0){
                     block.setAttribute('class','black')
                     random='black'
+                    blackCount++
                 }else{
                     block.setAttribute('class','white')
                     random='white'
                 }
-                if(cellIndex<6){
-                    let nonoIndex=[rowIndex,cellIndex,random]
+
+                if(columnIndex<(n+1)){
+                    let nonoIndex=[rowIndex,columnIndex,random]
                     nonogram.push(nonoIndex)
-                    cellIndex++
-                    n++
+                    columnIndex++
                 }else{
                     rowIndex++
-                    cellIndex=1
-                    let nonoIndex=[rowIndex,cellIndex,random]
+                    columnIndex=1
+                    let nonoIndex=[rowIndex,columnIndex,random]
                     nonogram.push(nonoIndex)
-                    cellIndex++
-                    n++
+                    columnIndex++
                 }
-            }
-
+            }            
             div.appendChild(block)
         }
-        document.querySelector('body').appendChild(div)
-        for(let j=1;j<6;j++){
-            for(let i=0;i<25;i++){
+        whole.appendChild(div)
+    }
+    
+    function createRowColumn(){
+        let blackWhite=[]
+        for(let j=1;j<(n+1);j++){
+            for(let i=0;i<n*n;i++){
                 if(nonogram[i][0]===j){
                     if(nonogram[i][2]==='black'){
                         blackWhite.push('1')
@@ -55,18 +67,32 @@ function addChoboEvent(){
                     }
                 }
             }
-            let test= document.getElementById(`${j+5}`)
+            let test= document.getElementById(`${j+n}`)
             test.textContent=blackWhite
             test.textContent=test.textContent.replaceAll(',',' ')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1 1 1 1 1 1','15')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1 1 1 1 1','14')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1 1 1 1','13')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1 1 1','12')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1 1','11')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1','10')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1','9')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1','8')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1','7')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 ','6')
             test.textContent=test.textContent.replaceAll('1 1 1 1 1','5')
             test.textContent=test.textContent.replaceAll('1 1 1 1','4')
             test.textContent=test.textContent.replaceAll('1 1 1','3')
             test.textContent=test.textContent.replaceAll('1 1','2')
             test.textContent=test.textContent.replaceAll('0','')
             blackWhite=[]
-        }
-        for(let j=1;j<6;j++){
-            for(let i=0;i<25;i++){
+            if(test.textContent===''){
+                test.textContent='0'
+            }
+        } // column
+
+        for(let j=1;j<(n+1);j++){
+            for(let i=0;i<n*n;i++){
                 if(nonogram[i][1]===j){
                     if(nonogram[i][2]==='black'){
                         blackWhite.push('1')
@@ -78,31 +104,127 @@ function addChoboEvent(){
             let test= document.getElementById(`${j}`)
             test.textContent=blackWhite
             test.textContent=test.textContent.replaceAll(',',' ')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1 1 1 1 1 1','15')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1 1 1 1 1','14')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1 1 1 1','13')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1 1 1','12')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1 1','11')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1 1','10')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1 1','9')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1 1','8')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 1','7')
+            test.textContent=test.textContent.replaceAll('1 1 1 1 1 1 ','6')
             test.textContent=test.textContent.replaceAll('1 1 1 1 1','5')
             test.textContent=test.textContent.replaceAll('1 1 1 1','4')
             test.textContent=test.textContent.replaceAll('1 1 1','3')
             test.textContent=test.textContent.replaceAll('1 1','2')
             test.textContent=test.textContent.replaceAll('0','')
+            blackWhite=[]
             if(test.textContent===''){
                 test.textContent='0'
+            } 
+        } //row
+    }
+    
+    function createClickEvent(){
+        let life=3
+        lifeDiv.textContent=`Your life=${life}`
+        document.querySelectorAll('.white').forEach(function(element){
+            function left(e){
+                if(!e.target.style.backgroundImage){
+                    life--
+                    lifeDiv.textContent=`Your life=${life}`
+                    e.target.style.backgroundImage='url(./images/redX.png)'
+                    e.target.removeEventListener('contextmenu',right)
+                }else if(e.target.style.backgroundImage==='url("./images/X.png")'){
+                    life--
+                    lifeDiv.textContent=`Your life=${life}`
+                    e.target.style.backgroundImage='url(./images/redX.png)'
+                    e.target.removeEventListener('contextmenu',right)
+                }
+                    
+                if(life===0){
+                    setTimeout(()=>{
+                        alert('남은 목숨이 없습니다. 다시시작하십시오.')
+                        whole.removeChild(div)
+                        chobo.style.display='inline-block'
+                        normal.style.display='inline-block'
+                        gosu.style.display='inline-block'
+                        lifeDiv.textContent=''
+                        whole.style.width='90px'
+                        whole.style.height='90px'
+                        whole.style.margin='400px auto'
+                    },1000)
+                }
             }
-            blackWhite=[]
-        }
+            function right(e){
+                e.preventDefault()
+                if(!e.target.style.backgroundImage){
+                    e.target.style.backgroundImage='url(./images/X.png)'
+                }else{
+                    e.target.style.backgroundImage=''
+                }
+            }
+            element.addEventListener('click',left)
+            element.addEventListener('contextmenu',right)
+        })
+    
+        document.querySelectorAll('.black').forEach(function(element){
+            function left(e){
+                e.target.style.backgroundColor='black'
+                e.target.style.backgroundImage=''
+                e.target.removeEventListener('contextmenu',right)
+                blackCount--
+                if(blackCount===0){
+                    setTimeout(()=>{
+                        alert('승리하셨습니다.')
+                        whole.removeChild(div)
+                        chobo.style.display='inline-block'
+                        normal.style.display='inline-block'
+                        gosu.style.display='inline-block'
+                        lifeDiv.textContent=''
+                        whole.style.width='90px'
+                        whole.style.height='90px'
+                        whole.style.margin='400px auto'
+                    },1000)
+                }
+            }
+            
+            function right(e){
+                e.preventDefault()
+                if(!e.target.style.backgroundImage){
+                    e.target.style.backgroundImage='url(./images/X.png)'
+                }else{
+                    e.target.style.backgroundImage=''
+                }
+            }
+
+            element.addEventListener('click',left)
+            element.addEventListener('contextmenu',right)
+        })
+    }
+
+    createSpace()
+    createRowColumn()
+    createClickEvent()
+}
+
+function addClickEvent(){
+    chobo.addEventListener('click',()=>{
+        createNonogram(5,300,300)
+    })
+
+    normal.addEventListener('click',()=>{
+        createNonogram(10,550,150)
+    })
+
+    gosu.addEventListener('click',()=>{
+        createNonogram(15,800,50)
     })
 }
 
-function addNormalEvent(){
-    //
-}
-
-function addGosuEvent(){
-    //
-}
-
 function init(){
-    addChoboEvent()
-    addNormalEvent()
-    addGosuEvent()
+    addClickEvent()
 }
 
 init()
