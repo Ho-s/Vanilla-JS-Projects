@@ -171,7 +171,6 @@ body{
     box-shadow: 1px 1px 1px 1px;
     margin: 20px auto;
     position: relative;
-    overflow-y: auto;
 }
 
 #memo textarea{
@@ -183,7 +182,7 @@ body{
     font-weight: 500;
     font-size: 14px;
     resize: none;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 
