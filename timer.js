@@ -24,10 +24,10 @@ function intimeEvent(){
     seconds=localStorage.getItem('seconds')
     setInterval(()=>{
         document.querySelector("#timer").querySelector("h2").textContent=`${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}`:seconds}`
-        if(seconds===60){
+        if(seconds>=60){
             minutes++
             seconds=0
-        } else if(minutes===60){
+        } else if(minutes>=60){
             hours++
             minutes=0
         }
@@ -98,9 +98,10 @@ function makeList(){
     deduplication() //deduplication
     const when=document.createElement("span")
     const howMany=document.createElement("span")
-    howMany.style.margin="20px"
+    when.style.marginRight='20px'
     delBtn.textContent="삭제"
     delBtn.addEventListener("click",deleteRec)
+    delBtn.style.float
     const date=new Date()
     when.textContent=`${date.getFullYear()}년 ${date.getMonth()+1}월 ${date.getDate()}일`
     howMany.textContent=`${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}`:seconds}`
@@ -144,7 +145,7 @@ function loadRecords(){
             const delBtn=document.createElement("button")
             const when=document.createElement("span")
             const howMany=document.createElement("span")
-            howMany.style.margin="20px"
+            when.style.marginRight='20px'
             delBtn.addEventListener("click",deleteRec)
             delBtn.textContent="삭제"
             li.appendChild(when)

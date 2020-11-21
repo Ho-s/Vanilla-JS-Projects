@@ -209,42 +209,45 @@ function loadAlarm() {
 function setAlarmEvent(){
     let audio = new Audio('calling.mp3')
     setInterval(()=>{
-        const date=new Date()
-        const year=date.getFullYear()
-        const month=date.getMonth()+1
-        const day=date.getDate()
-        const hours=date.getHours()
-        const minutes=date.getMinutes()
-        for(let i=0;i<alarmList.length;i++){
-            if(date.getFullYear()===Number(alarmList[i].year.substr(0,alarmList[i].year.length-1))){
-                if(date.getMonth()+1===Number(alarmList[i].month.substr(0,alarmList[i].month.length-1))){
-                    if(date.getDate()===Number(alarmList[i].day.substr(0,alarmList[i].day.length-1))){
-                        if(date.getHours()===Number(alarmList[i].hours.substr(0,alarmList[i].hours.length-1))){
-                            if(date.getMinutes()===Number(alarmList[i].minutes.substr(0,alarmList[i].minutes.length-1))){
-                                audio.play()
-                                audio.addEventListener('ended', function() { 
-                                    this.currentTime = 0;
-                                    this.play();
-                                }, false);
-                                const gettingName=document.getElementsByName(alarmList[i].name)
-                                alarm.removeChild(gettingName[0])
-                                const containBox=document.createElement('div')
-                                const div=document.createElement('div')
-                                const alert=document.createElement('h3')
-                                alert.textContent=alarmList[i].year+alarmList[i].month+alarmList[i].day+alarmList[i].hours+alarmList[i].minutes+'\n'+alarmList[i].contents
-                                alarmList.splice(i,1)
-                                localStorage.setItem('alarmList', JSON.stringify(alarmList))
-                                div.id='stopButton'
-                                containBox.id='containBox'
-                                body.appendChild(alert)
-                                body.appendChild(div)
-                                body.appendChild(containBox)
-                                div.addEventListener('click',()=>{
-                                    audio.pause()
-                                    body.removeChild(alert)
-                                    body.removeChild(div)
-                                    body.removeChild(containBox)
-                                })
+        if(alarmList.length>0){
+            console.log('wts')
+            const date=new Date()
+            const year=date.getFullYear()
+            const month=date.getMonth()+1
+            const day=date.getDate()
+            const hours=date.getHours()
+            const minutes=date.getMinutes()
+            for(let i=0;i<alarmList.length;i++){
+                if(date.getFullYear()===Number(alarmList[i].year.substr(0,alarmList[i].year.length-1))){
+                    if(date.getMonth()+1===Number(alarmList[i].month.substr(0,alarmList[i].month.length-1))){
+                        if(date.getDate()===Number(alarmList[i].day.substr(0,alarmList[i].day.length-1))){
+                            if(date.getHours()===Number(alarmList[i].hours.substr(0,alarmList[i].hours.length-1))){
+                                if(date.getMinutes()===Number(alarmList[i].minutes.substr(0,alarmList[i].minutes.length-1))){
+                                    audio.play()
+                                    audio.addEventListener('ended', function() { 
+                                        this.currentTime = 0;
+                                        this.play();
+                                    }, false);
+                                    const gettingName=document.getElementsByName(alarmList[i].name)
+                                    alarm.removeChild(gettingName[0])
+                                    const containBox=document.createElement('div')
+                                    const div=document.createElement('div')
+                                    const alert=document.createElement('h3')
+                                    alert.textContent=alarmList[i].year+alarmList[i].month+alarmList[i].day+alarmList[i].hours+alarmList[i].minutes+'\n'+alarmList[i].contents
+                                    alarmList.splice(i,1)
+                                    localStorage.setItem('alarmList', JSON.stringify(alarmList))
+                                    div.id='stopButton'
+                                    containBox.id='containBox'
+                                    body.appendChild(alert)
+                                    body.appendChild(div)
+                                    body.appendChild(containBox)
+                                    div.addEventListener('click',()=>{
+                                        audio.pause()
+                                        body.removeChild(alert)
+                                        body.removeChild(div)
+                                        body.removeChild(containBox)
+                                    })
+                                }
                             }
                         }
                     }
@@ -252,6 +255,7 @@ function setAlarmEvent(){
             }
         }
     },1000)
+
 }
 
 function init(){
