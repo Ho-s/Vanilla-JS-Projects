@@ -210,7 +210,6 @@ function setAlarmEvent(){
     let audio = new Audio('calling.mp3')
     setInterval(()=>{
         if(alarmList.length>0){
-            console.log('wts')
             const date=new Date()
             const year=date.getFullYear()
             const month=date.getMonth()+1
