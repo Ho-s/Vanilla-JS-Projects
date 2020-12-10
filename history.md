@@ -13,3 +13,6 @@
     * 공부시간 기록을 시작하면 lofi youtube 사이트가 연결되도록 설정  
     출처 : https://www.youtube.com/embed/5qap5aO4i9A  // ChilledCow
     *  <a href="alarm.md">Alarm</a>.md 추가
+
+* 20201210
+    * `css`의 `animation`을 `transition`으로 대체

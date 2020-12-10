@@ -10,7 +10,7 @@ function change(){
         random=Math.floor(Math.random()*9)
         background.style.animation="fadeIn 2s"
         background.style.backgroundImage=`url(images/background${random}.jpg)`
-    },1900)
+    },900)
 }
 
 setInterval(change,60000)

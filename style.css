@@ -22,9 +22,9 @@ body{
     0%{
         opacity: 1;
     }
-    100%{
+    50%{
         opacity: 0;
-    } 
+    }
 }
 
 #background{
@@ -183,6 +183,7 @@ body{
     font-size: 14px;
     resize: none;
     overflow-y: auto;
+    transition: height .5s;
 }
 
 
@@ -222,26 +223,8 @@ body{
     background-size: contain;
 }
 
-@keyframes widening{
-    from{
-        height: 24px;
-    }
-    to{
-        height: 240px;
-    }
-}
-@keyframes contracting{
-    from{
-        height: 240px;
-    }
-    to{
-        height: 24px;
-    }
-}
-
 #memo textarea:focus{
-    animation: widening 1s;
-    animation-fill-mode: forwards
+    height: 240px;
 }
 
 #alarmSet{

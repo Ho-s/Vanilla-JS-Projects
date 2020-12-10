@@ -29,13 +29,6 @@ function addMemoEvent() {
         localStorage.setItem('memoList', JSON.stringify(memoList))
         memo.appendChild(li)
 
-        textarea.addEventListener('blur',(e)=>{
-            textarea.style.animation='contracting 1s'
-            setTimeout(()=>{
-                textarea.style.animation=''
-            },900)
-        })
-
         button.addEventListener('click', (e) => {
             for (let i = 0; i < memoList.length; i++) {
                 if (memoList[i].id === e.target.parentNode.parentNode.parentNode.id) {
@@ -88,13 +81,6 @@ function loadMemo() {
             div.appendChild(form)
             li.appendChild(div)
             memo.appendChild(li)
-
-            textarea.addEventListener('blur',(e)=>{
-                textarea.style.animation='contracting 1s'
-                setTimeout(()=>{
-                    textarea.style.animation=''
-                },900)
-            })
 
             button.addEventListener('click', (e) => {
                 for (let i = 0; i < memoList.length; i++) {
