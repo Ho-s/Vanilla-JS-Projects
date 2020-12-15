@@ -100,7 +100,7 @@ function addAlarmClick(){
                 `${hoursInput.value < 10 ? `0${hoursInput.value}` : hoursInput.value}`+
                 `${minutesInput.value < 10 ? `0${minutesInput.value}` : minutesInput.value}`)
                 <=
-                Number(yearInput.value+
+                Number(year+
                 `${month < 10 ? `0${month}` : month}`+
                 `${day < 10 ? `0${day}` : day}`+
                 `${hours < 10 ? `0${hours}` : hours}`+
@@ -157,6 +157,16 @@ function addAlarmClick(){
                     localStorage.setItem('alarmList', JSON.stringify(alarmList))
                 })
             }
+            console.log(Number(yearInput.value+
+                `${monthInput.value < 10 ? `0${monthInput.value}` : monthInput.value}`+
+                `${dayInput.value < 10 ? `0${dayInput.value}` : dayInput.value}`+
+                `${hoursInput.value < 10 ? `0${hoursInput.value}` : hoursInput.value}`+
+                `${minutesInput.value < 10 ? `0${minutesInput.value}` : minutesInput.value}`))
+            console.log(Number(year+
+                `${month < 10 ? `0${month}` : month}`+
+                `${day < 10 ? `0${day}` : day}`+
+                `${hours < 10 ? `0${hours}` : hours}`+
+                `${minutes < 10 ? `0${minutes}` : minutes}`))
         })
         e.stopPropagation()
     })
