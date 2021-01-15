@@ -135,12 +135,19 @@ function inputCheck(){
     }
 }
 
+const wholeTime=document.querySelector('.whole-time')
 function loadRecords(){
+    let wholeHours=0
+    let wholeMinutes=0
+    let wholeSeconds=0
     const loadedRecords=localStorage.getItem('records')
     if(loadedRecords!==null){
         const parsedRecords= JSON.parse(loadedRecords)
         records=parsedRecords
         for(let i=0;i<records.length;i++){
+            wholeHours+=Number(records[i].number[0]+records[i].number[1])
+            wholeMinutes+=Number(records[i].number[3]+records[i].number[4])
+            wholeSeconds+=Number(records[i].number[6]+records[i].number[7])
             const li=document.createElement("li")
             const delBtn=document.createElement("button")
             const when=document.createElement("span")
@@ -157,6 +164,12 @@ function loadRecords(){
             history.appendChild(li)
             recordsId.push(records[i].id) //deduplication
         }
+        wholeMinutes+=parseInt(wholeSeconds/60)
+        wholeSeconds=wholeSeconds%60
+        wholeHours+=parseInt(wholeMinutes/60)
+        wholeMinutes=wholeMinutes%60
+        
+        wholeTime.textContent=`전체 공부 시간 ${records.length}일동안 ${wholeHours < 10 ? `0${wholeHours}` : wholeHours}:${wholeMinutes < 10 ? `0${wholeMinutes}` : wholeMinutes}:${wholeSeconds < 10 ? `0${wholeSeconds}`:wholeSeconds}`
     }
 }
 
