@@ -1,0 +1,117 @@
+body{
+    background-color: #b5e7a0
+}
+
+#form{
+    width: 177px;
+    margin: 200px auto 0;
+}
+
+#form input{
+    background-color: #86af49;
+    border: none;
+    border-radius: 5px;
+    height: 32px;
+    font-size: 14px;
+    color: white;
+    font-weight: 600;
+    width: 177px;
+}
+
+form input:focus{
+    outline-style:dashed
+}
+
+#result{
+    width: 700px;
+    height: 400px;
+    margin:40px auto;
+    background-color:#86af49;
+    border-radius: 12px;
+    position: relative;
+}
+
+#left{
+    width: 225px;
+    height: 400px;
+    display: inline-block;
+}
+
+#right{
+    width: 469px;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    top:0
+}
+
+#image{
+    width: 175px;
+    height: 175px;
+    margin: 25px;
+    border-radius: 175px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#right div, #reposList{
+    width: 469px;
+    color: white;
+    overflow-y:auto; 
+}
+
+#name{
+    height: 100px;
+    line-height: 6.3;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#introduction{
+    height: 80px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#information{
+    height: 40px;
+    font-weight: 800;
+}
+
+#information span{
+    margin-right:50px;
+}
+
+#reposName{
+    height: 40px;
+    font-weight: 800;
+}
+
+#reposList{
+    height: 140px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#reposList li{
+    display: inline-block;
+    background-color: white;
+    border-radius: 14px;
+    margin: 4px
+}
+
+#reposList a{
+    text-decoration: none;
+    color:black;
+    padding:0 4px;
+    font-weight: 500;
+}
+
+#address{
+    margin-left:100px;
+    text-decoration: none;
+    color: white;
+}
