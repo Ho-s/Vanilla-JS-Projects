@@ -1,0 +1,43 @@
+body{
+    background-color: wheat;
+}
+
+.white,
+.black,
+.numbers{
+    float: left;
+    width: 48px;
+    height: 48px;
+    border: 1px solid white;
+}
+
+.white,
+.black{
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.numbers{
+    background-color: rgb(170, 169, 131);
+}
+.chobo,
+.normal,
+.gosu{
+    width: 90px;
+    height: 30px;
+}
+
+.whole{
+    margin: 400px auto;
+    width: 90px;
+    height: 90px;
+    background-color: #e9e9e9;
+    position: relative;
+}
+
+.life{
+    position: absolute;
+    top:-30px;
+    right: 45%;
+}
