@@ -1,0 +1,197 @@
+body{
+    background-color: #e9e9e9;
+}
+
+::-webkit-scrollbar{
+    width: 4px;
+    height: 100%;
+    border: 1px solid wheat;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    background-color: black;
+}
+
+#whole{
+    margin: 220px auto;
+    height: 420px;
+    width: 240px;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px grey;
+}
+
+input{
+    width: 115px;
+    height: 24px;
+    background-color: #ccc;
+    border:0;
+    padding: 0;
+}
+
+#button{
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin:0;
+    position: absolute;
+    top:1px;
+    right: 0;
+    background-image: url(./images/search.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+form{
+    margin: 12px 45px 13px 45px;
+    display: inline-block;
+    position: relative;
+    width: 150px
+}
+
+#top{
+    height: 50px;
+}
+
+#mid{
+    height: 140px;
+    background-color: rgb(168, 153, 238);
+}
+
+
+#bottom{
+    height: 230px;
+    width: 240px;
+    display: inline-block;
+    overflow-y:auto;
+}
+
+.space{
+    box-shadow: 1px 1px 1px 1px grey;
+    width: 200px;
+    height: 190px;
+    margin: 20px;
+    padding:0
+}
+
+#search-result{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bottom-high{
+    height: 150px;
+    background-color: #e9e9e9;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+#inside{
+    position: absolute;
+    top:10px;
+    left: -1px;
+    background-color: white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 11px;
+    width: 100px;
+    height: 20px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px grey;
+}
+
+#mid-high{
+    height: 40px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#mid-low{
+    padding: 0;
+    margin:0;
+    margin-top:13px;
+    list-style: none;
+    height: 74px;
+    overflow: hidden;
+}
+
+#mid-low:hover{
+    overflow: auto;
+}
+
+#mid-low li{
+    margin-left:7px;
+    width: 52px;
+    cursor: pointer;
+    height: 70px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#mid-low div{
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border:2px solid white
+}
+
+#mid-low span{
+    font-size: 12px;
+    font-weight: 400;
+    width: 50px;
+    height: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+}
+
+.bottom-low{
+    position: relative;
+}
+
+.heart{
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 8px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    background-blend-mode: multiply;
+}
+
+.the-other-heart{
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 8px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    background-blend-mode: multiply;
+}
+
+.name{
+    position: absolute;
+    margin-top: 9px;
+    left:5px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 140px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+}
